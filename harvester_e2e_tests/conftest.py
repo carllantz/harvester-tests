@@ -287,6 +287,13 @@ def pytest_addoption(parser):
         default=config_data.get('opensuse-checksum'),
         help=('Checksum for opensuse_image')
     )
+    parser.addoption(
+        '--registry-mirror-url',
+        action='store',
+        default=config_data.get('registry-mirror-url', ''),
+        help=('Internal container registry mirror URL for air-gapped tests '
+              '(e.g. https://registry.internal)')
+    )
 
 
 def pytest_configure(config):
@@ -325,7 +332,8 @@ def pytest_configure(config):
         ('S3', ('{_r} backup-target tests with S3')),
         ('NFS', ('{_r} backup-target tests with NFS')),
         ('performance', ('{_r} tests related to performance in any module')),
-        ('experimental', ('{_r} tests for experimental features'))
+        ('experimental', ('{_r} tests for experimental features')),
+        ('airgapped', ('{_r} air-gapped environment tests')),
     ]
 
     for m, msg in markers:

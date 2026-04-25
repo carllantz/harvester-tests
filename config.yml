@@ -62,6 +62,10 @@ k8s-version: 'v1.28'
 # Wait time for polling Rancher cluster status.
 rancher-cluster-wait-timeout: 1800
 
+# Air-gapped test options
+# Internal container registry mirror URL (e.g. https://registry.internal)
+registry-mirror-url: ''
+
 # Upgrade parameters
 upgrade-prepare-dependence: False
 upgrade-sc-replicas: 3
