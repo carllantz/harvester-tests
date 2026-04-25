@@ -28,3 +28,6 @@ public
 # building wheel removal
 apiclient/build
 apiclient/build/*
+
+# Claude Code
+CLAUDE.md
